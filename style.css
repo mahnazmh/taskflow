@@ -1,0 +1,378 @@
+/* =========================
+   1. Global Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #1e293b;
+}
+
+button {
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   2. Sidebar
+========================= */
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: #172554;
+    color: white;
+    padding: 30px 20px;
+}
+
+.logo {
+    font-size: 26px;
+    margin-bottom: 45px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #cbd5e1;
+    background: transparent;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* =========================
+   3. Main Content
+========================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #64748b;
+}
+
+.add-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   4. Statistics
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+.stat-card h3 {
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+
+/* =========================
+   5. Task Section
+========================= */
+
+.task-section h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.task-name {
+    overflow-wrap: anywhere;
+}
+
+.task-date {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+/* =========================
+   6. Priority Labels
+========================= */
+
+.priority {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.priority.high {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.priority.medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.priority.low {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+
+/* =========================
+   7. Task Buttons
+========================= */
+
+.complete-btn,
+.edit-btn,
+.delete-btn {
+    border: none;
+    padding: 8px 11px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.complete-btn {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.complete-btn:hover {
+    background: #bbf7d0;
+}
+
+.edit-btn {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.edit-btn:hover {
+    background: #bfdbfe;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+
+/* =========================
+   8. Completed Tasks
+========================= */
+
+.task-item.completed .task-name {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.task-item.completed {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   9. Empty Message
+========================= */
+
+.empty-message {
+    color: #64748b;
+    text-align: center;
+    padding: 35px 15px;
+    background: white;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.empty-message[hidden] {
+    display: none;
+}
+
+
+/* =========================
+   10. Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .task-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-actions {
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .logo {
+        margin-bottom: 18px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        width: auto;
+        padding: 10px 12px;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+    .task-item {
+        padding: 15px;
+    }
+
+    .task-actions {
+        width: 100%;
+        gap: 7px;
+    }
+
+}
